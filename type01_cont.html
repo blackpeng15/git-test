@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expire" content="-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+	<head>
+	<link rel="stylesheet" href="../css/cont_layout.css">
+    
+	<title>XpERP</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+        
+       jQuery(document).ready(function(){
+
+            var select = $("select.data_name");
+
+            select.change(function(){
+                var data_name = $(this).children("option:selected").text();
+                $(this).siblings("label").text(data_name);
+            });
+        });
+        
+    
+    </script>
+
+    </head>
+
+    <body>
+
+        <div class="multi_cont slide">
+            <!-- 상단 타이틀 및 버튼영역 -->
+            <div class="con_tit_box mgB15">
+                <h1 class="tit_h2">고지금액조회/출력</h1>
+                <div class="main_btn_box">
+                    <a href="" class="basic_btn left d_blue">
+                        회계전표발행
+                    </a>
+                    <a href="" class="basic_btn left g_blue">
+                        조회
+                    </a>
+                    <a href="" class="basic_btn left g_blue">
+                        저장
+                    </a> 
+                    <a href="" class="basic_btn left g_blue">
+                        삭제
+                    </a>
+                    <a href="" class="basic_btn left g_blue">
+                        인쇄
+                    </a>
+                </div>
+            </div>
+            <!-- 상단 타이틀 및 버튼영역 -->
+            
+            <!-- 검색조건 기본 -->
+            <div class="search_box mgB15">
+                <div class="search_list">
+                    <ul>
+                        <li>
+                            <strong class="emphasis_txt">고지서 구분</strong>
+                            <div class="selectbox w100p left">
+                                <label for="data">고지서</label>
+                                <select class="data_name">
+                                    <option>고지서1</option>
+                                    <option>고지서3</option>
+                                    <option>고지서4</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="emphasis_txt">부과년월</strong>
+                            <input class="w100p" type="text">
+                        </li>
+                        <li>
+                            <strong class="emphasis_txt">동호</strong>
+                            <div class="label_input w70p">
+                                <label>동</label>
+                                <input type="number" size="4">
+                            </div>    
+                            <div class="label_input w70p">
+                                <label>호</label>
+                                <input type="number" size="4">
+                            </div>    
+                                    <div class="label_input">~</div> 
+                                    <div class="label_input w70p">
+                                <label>동</label>
+                                <input type="number" size="4">
+                            </div>    
+                            <div class="label_input w70p">
+                                <label>호</label>
+                                <input type="number" size="4">
+                            </div>    
+                        </li>
+                        <li >
+                            <strong>출력 구분</strong>
+                                <div class="selectbox w120p left">
+                                    <label for="data">전체</label>
+                                    <select class="data_name">
+                                        <option>당월+미납</option>
+                                        <option>당월</option>
+                                        <option>미납</option>
+                                    </select>
+                                </div>
+                                <div class="selectbox w100p left">
+                                    <label for="data">입주</label>
+                                    <select class="data_name">
+                                        <option>입주</option>
+                                        <option>고지서</option>
+                                        <option>고지서</option>
+                                    </select>
+                                </div>
+                                <div class="selectbox w100p left">
+                                    <label for="data">개별출력</label>
+                                    <select class="data_name">
+                                        <option>개별출력</option>
+                                        <option>고지서</option>
+                                        <option>고지서</option>
+                                    </select>
+                                </div>
+                        </li>
+
+                        <li >
+                            <strong>금액구분</strong>
+                            <div class="selectbox w120p left">
+                                <label for="data">합계(납기내)</label>
+                                <select class="data_name">
+                                    <option>합계(납기내)</option>
+                                    <option>합계(납기후)</option>
+                                    <option>미납</option>
+                                </select>
+                            </div>
+                            <div class="selectbox w80p left">
+                                <label for="data">빼기</label>
+                                <select class="data_name">
+                                    <option>빼기</option>
+                                    <option>고지서</option>
+                                </select>
+                            </div>
+                                <input class="w100p" type="text">
+                        </li>
+                        <li>
+                            <strong>입주구분</strong>
+                            <div class="selectbox w80p left">
+                                <label for="data">전체</label>
+                                <select class="data_name">
+                                    <option>미입주</option>
+                                    <option>입주</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li >
+                            <strong>고지서</strong>
+                            <div class="selectbox w120p left">
+                                <label for="data">A4앞면비교표</label>
+                                <select class="data_name">
+                                    <option>A4앞면비교표</option>
+                                    <option>고지서</option>
+                                    <option>고지서</option>
+                                </select>
+                            </div>
+                            <div class="selectbox w180p left">
+                                <label for="data">재발행고지서선택</label>
+                                <select class="data_name">
+                                    <option>재발행고지서선택</option>
+                                    <option>미발행고지서</option>
+                                    <option>고지서</option>
+                                </select>
+                            </div>
+                            <div class="selectbox w100p left">
+                                <label for="data">전체</label>
+                                <select class="data_name">
+                                    <option>전체</option>
+                                    <option>전체2</option>
+                                    <option>전체3</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 검색조건 영역 -->
+            
+            <!-- 탭 컨텐츠 영역 -->
+            <div class="tab_cont_box mgB15 slide2">
+                <div class="tab_btn">
+                    <ul>
+                        <li class="active"><a href="#">고지서</a></li>
+                        <li><a href="#">조정대장</a></li>
+                        <li><a href="#">관리비할인출력</a></li>
+                    </ul>
+                </div>
+                <!-- 탭 내용 컨텐츠 부분 -->
+                <div class="tab_content">
+                    <div class="cont_table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td class="t_head" rowspan="2">
+                                        <div class="check_box_btn">
+                                            <input type="checkbox" id="all">
+                                            <label class="check_style" for="all">
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="t_head" rowspan="2">전표발행</td>
+                                    <td class="t_head" rowspan="2">사용일자</td>
+                                    <td class="t_head" rowspan="2">사용내역</td>
+                                    <td class="t_head" rowspan="2">업체명</td>
+                                    <td class="t_head b_bottom" colspan="3">금액</td>
+                                    <td class="t_head b_bottom" colspan="2">연계처리</td>
+                                    <td class="t_head" rowspan="2">금액</td>
+                                </tr>
+                                <tr>
+                                    <td class="t_head">공급가액</td>
+                                    <td class="t_head">부가세</td>
+                                    <td class="t_head">합계</td>
+                                    <td class="t_head">고지항목</td>
+                                    <td class="t_head">자동분개</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="check_box_btn">
+                                            <input type="checkbox" id="banner_size01" checked="">
+                                            <label class="check_style" for="banner_size01">
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>00001</td>
+                                    <td>화재보험</td>
+                                    <td>만수르</td>
+                                    <td>보험</td>
+                                    <td>가정용화재보험료 광고</td>
+                                    <td>20년 1월 1일 ~ 20년 6월 30일</td>
+                                    <td>
+                                        <a class="small_btn blue_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                    <td>애드워드</td>
+                                    <td>예약</td>
+                                    <td>
+                                        <a class="small_btn scarlet_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                </tr>   
+                                <tr>
+                                    <td>
+                                        <div class="check_box_btn">
+                                            <input type="checkbox" id="banner_size02">
+                                            <label class="check_style" for="banner_size02">
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>00001</td>
+                                    <td>화재보험</td>
+                                    <td>만수르</td>
+                                    <td>보험</td>
+                                    <td>가정용화재보험료 광고</td>
+                                    <td>20년 1월 1일 ~ 20년 6월 30일</td>
+                                    <td>
+                                        <a class="small_btn blue_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                    <td>애드워드</td>
+                                    <td>예약</td>
+                                    <td>
+                                        <a class="small_btn scarlet_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="check_box_btn">
+                                            <input type="checkbox" id="banner_size03">
+                                            <label class="check_style" for="banner_size03">
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>00001</td>
+                                    <td>화재보험</td>
+                                    <td>만수르</td>
+                                    <td>보험</td>
+                                    <td>가정용화재보험료 광고</td>
+                                    <td>20년 1월 1일 ~ 20년 6월 30일</td>
+                                    <td>
+                                        <a class="small_btn blue_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                    <td>애드워드</td>
+                                    <td>예약</td>
+                                    <td>
+                                        <a class="small_btn scarlet_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="check_box_btn">
+                                            <input type="checkbox" id="banner_size04">
+                                            <label class="check_style" for="banner_size04">
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>00001</td>
+                                    <td>화재보험</td>
+                                    <td>만수르</td>
+                                    <td>보험</td>
+                                    <td>가정용화재보험료 광고</td>
+                                    <td>20년 1월 1일 ~ 20년 6월 30일</td>
+                                    <td>
+                                        <a class="small_btn blue_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                    <td>애드워드</td>
+                                    <td>예약</td>
+                                    <td>
+                                        <a class="small_btn scarlet_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="check_box_btn">
+                                            <input type="checkbox" id="banner_size05">
+                                            <label class="check_style" for="banner_size05">
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>00001</td>
+                                    <td>화재보험</td>
+                                    <td>만수르</td>
+                                    <td>보험</td>
+                                    <td>가정용화재보험료 광고</td>
+                                    <td>20년 1월 1일 ~ 20년 6월 30일</td>
+                                    <td>
+                                        <a class="small_btn blue_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                    <td>애드워드</td>
+                                    <td>예약</td>
+                                    <td>
+                                        <a class="small_btn scarlet_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="check_box_btn">
+                                            <input type="checkbox" id="banner_size06">
+                                            <label class="check_style" for="banner_size06">
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>00001</td>
+                                    <td>화재보험</td>
+                                    <td>만수르</td>
+                                    <td>보험</td>
+                                    <td>가정용화재보험료 광고</td>
+                                    <td>20년 1월 1일 ~ 20년 6월 30일</td>
+                                    <td>
+                                        <a class="small_btn blue_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                    <td>애드워드</td>
+                                    <td>예약</td>
+                                    <td>
+                                        <a class="small_btn scarlet_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="check_box_btn">
+                                            <input type="checkbox" id="banner_size07">
+                                            <label class="check_style" for="banner_size07">
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>00001</td>
+                                    <td>화재보험</td>
+                                    <td>만수르</td>
+                                    <td>보험</td>
+                                    <td>가정용화재보험료 광고</td>
+                                    <td>20년 1월 1일 ~ 20년 6월 30일</td>
+                                    <td>
+                                        <a class="small_btn blue_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                    <td>애드워드</td>
+                                    <td>예약</td>
+                                    <td>
+                                        <a class="small_btn scarlet_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="check_box_btn">
+                                            <input type="checkbox" id="banner_size08">
+                                            <label class="check_style" for="banner_size08">
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>00001</td>
+                                    <td>화재보험</td>
+                                    <td>만수르</td>
+                                    <td>보험</td>
+                                    <td>가정용화재보험료 광고</td>
+                                    <td>20년 1월 1일 ~ 20년 6월 30일</td>
+                                    <td>
+                                        <a class="small_btn blue_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                    <td>애드워드</td>
+                                    <td>예약</td>
+                                    <td>
+                                        <a class="small_btn scarlet_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="check_box_btn">
+                                            <input type="checkbox" id="banner_size09">
+                                            <label class="check_style" for="banner_size09">
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>00001</td>
+                                    <td>화재보험</td>
+                                    <td>만수르</td>
+                                    <td>보험</td>
+                                    <td>가정용화재보험료 광고</td>
+                                    <td>20년 1월 1일 ~ 20년 6월 30일</td>
+                                    <td>
+                                        <a class="small_btn blue_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                    <td>애드워드</td>
+                                    <td>예약</td>
+                                    <td>
+                                        <a class="small_btn scarlet_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="check_box_btn">
+                                            <input type="checkbox" id="banner_size10">
+                                            <label class="check_style" for="banner_size10">
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>00001</td>
+                                    <td>화재보험</td>
+                                    <td>만수르</td>
+                                    <td>보험</td>
+                                    <td>가정용화재보험료 광고</td>
+                                    <td>20년 1월 1일 ~ 20년 6월 30일</td>
+                                    <td>
+                                        <a class="small_btn blue_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                    <td>애드워드</td>
+                                    <td>예약</td>
+                                    <td>
+                                        <a class="small_btn scarlet_l_b">
+                                            보기
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="gray_td">
+                                    <td colspan="11">　</td>                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+
+	</body>
+</html>
