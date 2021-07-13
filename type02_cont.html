@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expire" content="-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+	<head>
+	<link rel="stylesheet" href="../css/cont_layout.css">
+    
+	<title>XpERP</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+        
+    jQuery(document).ready(function(){
+        jQuery(document).ready(function(){
+
+            var select = $("select.data_name");
+
+            select.change(function(){
+                var data_name = $(this).children("option:selected").text();
+                $(this).siblings("label").text(data_name);
+            });
+        });
+        
+    });
+    </script>
+
+    </head>
+
+    <body>
+
+        <div class="multi_cont slide">
+           
+            김진환 000000
+        </div>
+
+	</body>
+</html>
